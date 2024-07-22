@@ -5,7 +5,6 @@ import {
   Flex,
   FormControl,
   FormHelperText,
-  FormLabel,
   Heading,
   Input,
   Menu,
@@ -14,8 +13,20 @@ import {
   MenuList
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home(){
+
+  const [name, setName]=useState('')
+
+  const handleLogin = () => {
+    if (name == 'admin') {
+      const url='selfintro';
+      window.open(url, '_blank')
+    } else {
+      alert('ログインに失敗しました。入力内容を再度確認してください。');
+    }
+  };
     return(
       <Flex width='500px'>
         <Box p={5}>
@@ -24,7 +35,7 @@ export default function Home(){
             top='5'
             right="5" >
               言語
-            </MenuButton>
+              </MenuButton>
             <MenuList>
               <MenuItem>
               <Link href='set_selfintro'>日本語</Link>
@@ -35,17 +46,14 @@ export default function Home(){
            </MenuList>
           </Menu>
           
-        
-
-        <Heading as='h2' mb={4}>ログイン画面</Heading>
+        <Heading as='h2' mb={5}>ログイン画面</Heading>
         <FormControl isRequired>
-          <FormLabel>ニックネーム</FormLabel>
-            <Input placeholder='名前' mb={2} />
-            <FormHelperText mb={5}>小文字で入力してください</FormHelperText>
+            <Input placeholder='ニックネーム' mb={2} onChange={(e) => setName(e.target.value)}/>
+            <FormHelperText mb={5}>研究室内でのニックネームを入力してください</FormHelperText>
         </FormControl>
         
-        <Button colorScheme='blue' mb={6}>
-            <Link href={'selfintro'}  target='_blank'>ログイン</Link>
+        <Button colorScheme='blue' mb={6} onClick={handleLogin}>
+            ログイン
             </Button>
             </Box>
           </Flex>

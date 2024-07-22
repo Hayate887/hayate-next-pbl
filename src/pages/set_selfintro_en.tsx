@@ -5,7 +5,6 @@ import {
   Flex,
   FormControl,
   FormHelperText,
-  FormLabel,
   Heading,
   Input,
   Menu,
@@ -14,8 +13,22 @@ import {
   MenuList
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home(){
+  const [name, setName]=useState('')
+  const [error, setError]=useState('')
+
+  const handleLogin = () => {
+    if (name == 'admin') {
+      setError('')
+      const url='selfintro_en';
+      window.open(url, '_blank')
+    } else {
+      setError('Login failed. Please check your input again.')
+    }
+  };
+
     return(
       <Flex width='500px'>
         <Box p={5}>
@@ -35,16 +48,18 @@ export default function Home(){
             </MenuList>
           </Menu>
 
-        <Heading as='h2' mb={4}>Log in</Heading>
-        <FormControl isRequired>
-            <FormLabel>nickname</FormLabel>
-            <Input placeholder='name' mb={2} />
-            <FormHelperText mb={5}>Plase input in lowercase</FormHelperText>
+        <Heading as='h2' mb={5}>Sign-in page</Heading>
+        <FormControl>
+            <Input placeholder='name' mb={2} onChange={(e) => setName(e.target.value)}/>
+            <FormHelperText mb={5}>Plase input your nickname in Iyatomi lab</FormHelperText>
         </FormControl>
-        <Button colorScheme='blue' mb={6}>
-            <Link href={'selfintro_en'}  target='_blank'>Log in</Link>
+        <Button colorScheme='blue' mb={6} onClick={handleLogin}>
+            Login
             </Button>
+            <Box color={'red'}>
+            {error && <div>{error}</div>}
+            </Box>
         </Box>
-      </Flex>
+        </Flex>
     )
 }

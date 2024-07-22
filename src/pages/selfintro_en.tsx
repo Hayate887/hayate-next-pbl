@@ -18,10 +18,10 @@ export default function English() {
             </MenuButton>
             <MenuList>
               <MenuItem>
-              <Link href='set_selfintro'  target='_blank'>日本語</Link>
+              <Link href='set_selfintro'  target='_blank'>Japanese</Link>
               </MenuItem>
               <MenuItem>
-              <Link href='set_selfintro_en'>英語</Link>
+              <Link href='set_selfintro_en'>English</Link>
               </MenuItem>
             </MenuList>
           </Menu>
@@ -29,7 +29,7 @@ export default function English() {
 
   <Box p={4}>
     <Center>
-      <Heading as='h1'>Hayate's page</Heading>
+      <Heading as='h1'>hayate's page</Heading>
     </Center>
 
   </Box>
@@ -49,7 +49,7 @@ export default function English() {
       </TabPanel>
 
       <TabPanel>
-        <h2><b>Name</b> : Sora Nishiyama</h2>
+        <h2><b>Name</b> : hayate</h2>
         <h2><b>Age</b> : 20</h2>
         <h2><b>Hobby</b> : Chii-kawa</h2>
         <h2><b>The thing what I'm into</b> : capsule toys</h2>
