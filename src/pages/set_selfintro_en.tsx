@@ -30,15 +30,15 @@ export default function Home(){
   const [other_userList]=useState(['gent', 'Hitoshi', 'pink', 'nyan'])
 
   const handleLogin = () => {
-    const isValidUsername = b3_userList.includes(name) 
-    const isValidUsername2 = b4_userList.includes(name) 
-    const isValidUsername3=m1_userList.includes(name)
-    const isValidUsername4=m2_userList.includes(name)
-    const isValidUsername5=other_userList.includes(name)
+    const isValidname = b3_userList.includes(name) 
+    const isValidname2 = b4_userList.includes(name) 
+    const isValidname3=m1_userList.includes(name)
+    const isValidname4=m2_userList.includes(name)
+    const isValidname5=other_userList.includes(name)
 
-    setError(isValidUsername || isValidUsername2 ||isValidUsername3||isValidUsername4||isValidUsername5? '' : 'Login failed');
+    setError(isValidname || isValidname2 ||isValidname3||isValidname4||isValidname5? '' : 'Login failed');
 
-    if (isValidUsername || isValidUsername2 ||isValidUsername3||isValidUsername4||isValidUsername5) {
+    if (isValidname || isValidname2 ||isValidname3||isValidname4||isValidname5) {
       const url='selfintro_en';
       window.open(url, '_blank')}
     }
