@@ -1,9 +1,9 @@
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
-    Box, Button, Center, Heading,
-    Menu, MenuButton,
-    MenuItem, MenuList,
-    Tab, TabList, TabPanel, TabPanels, Tabs, Text
+  Box, Button, Center, Heading,
+  Menu, MenuButton,
+  MenuItem, MenuList,
+  Tab, TabList, TabPanel, TabPanels, Tabs
 } from '@chakra-ui/react';
 import Link from "next/link";
 
@@ -17,12 +17,16 @@ export default function English() {
               ログイン画面に戻る
             </MenuButton>
             <MenuList>
+            <Link href='set_selfintro'  target='_blank'>
               <MenuItem>
-              <Link href='set_selfintro'  target='_blank'>日本語</Link>
+              日本語
               </MenuItem>
+              </Link>
+              <Link href='set_selfintro_en'>
               <MenuItem>
-              <Link href='set_selfintro_en'>英語</Link>
+              英語
               </MenuItem>
+              </Link>
             </MenuList>
           </Menu>
       </Box>
@@ -35,25 +39,16 @@ export default function English() {
   </Box>
   <Tabs>
     <TabList>
-      <Tab>ようこそ！</Tab>
       <Tab>hayateについて</Tab>
       <Tab>私の研究テーマ</Tab>
     </TabList>
 
     <TabPanels>
       <TabPanel>
-        <Heading as="h1" mb={6}>ここは、hayateの自己紹介サイトです!</Heading>
-        <Text>皆さんと仲良くなりたくて制作しました。</Text>
-      </TabPanel>
-
-      <TabPanel>
         <h2><b>名前</b> : hayate</h2>
         <h2><b>年齢</b> : 20</h2>
         <h2><b>趣味</b> : ちいかわ</h2>
         <h2><b>最近ハマっている事</b> : ガチャガチャ</h2>
-        <Button colorScheme='blue' mb={6}>
-          <Link href="/intro/daily"> ガチャガチャ日記 </Link>
-        </Button>
       </TabPanel>
 
       <TabPanel>
