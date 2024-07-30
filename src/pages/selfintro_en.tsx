@@ -28,7 +28,7 @@ export default function English() {
       <DrawerCloseButton/>
       <DrawerHeader>Menu</DrawerHeader>
       <DrawerBody>
-        <Link href='setting' target='_blank'>Back to Sign-in page</Link>
+        <Link href='setting' target='_blank'>Back to Log in page</Link>
       </DrawerBody>
       </DrawerContent>
     </Drawer>
@@ -51,7 +51,7 @@ export default function English() {
         <h2><b>Name</b> : hayate</h2>
         <h2><b>Age</b> : 20</h2>
         <h2><b>Hobby</b> : Chii-kawa</h2>
-        <h2><b>The thing what I'm into</b> : capsule toys</h2>
+        <h2><b>The thing what I&apos;m into</b> : capsule toys</h2>
       </TabPanel>
       <TabPanel>
         <Accordion defaultIndex={[-1]} allowMultiple>
