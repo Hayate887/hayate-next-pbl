@@ -1,110 +1,129 @@
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box, Button, Center, Heading,
-  Menu, MenuButton,
-  MenuItem, MenuList,
-  Tab, TabList, TabPanel, TabPanels, Tabs
+  Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel,
+  Box,
+  Button,
+  Center,
+  Divider,
+  Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay,
+  Heading,
+  Tab, TabList, TabPanel, TabPanels, Tabs,
+  Text,
+  useDisclosure
 } from '@chakra-ui/react';
 import Link from "next/link";
 
-export default function English() {
-  return (<>
+export default function Japanese() {
+
+  const {getDisclosureProps, getButtonProps}=useDisclosure()
+  const {isOpen, onOpen, onClose}=useDisclosure()
+  
+  const buttonProps=getButtonProps()
+  const disclosureProps=getDisclosureProps()
+
+  return (
+  <>
   <Box p={5}>
-    <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} position="absolute"
-            top='5'
-            right="5" >
-              メニュー
-            </MenuButton>
-            <MenuList>
-            <Link href='set_selfintro'  target='_blank'>
-              <MenuItem>
-              日本語
-              </MenuItem>
-              </Link>
-              <Link href='set_selfintro_en'>
-              <MenuItem>
-              英語
-              </MenuItem>
-              </Link>
-            </MenuList>
-          </Menu>
+    
+      <Button position="absolute" top='5' right="5" onClick={onOpen}>
+      <HamburgerIcon />
+      </Button>
+      <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+      <DrawerOverlay />
+      <DrawerContent>
+      <DrawerCloseButton/>
+        <DrawerHeader>メニュー</DrawerHeader>
+        <DrawerBody>
+      <Link href='setting' target='_blank'>
+         ログイン画面に戻る
+     </Link>
+     </DrawerBody>
+     </DrawerContent>
+    </Drawer>
+       
+      
       </Box>
 
-  <Box p={5}>
+  
     <Center>
-      <Heading as='h1' color='red'>hayateの自己紹介ページ</Heading>
+    <Heading as='h1' size='2xl' mb={10}>hayateのページへようこそ！</Heading>
     </Center>
-
-  </Box>
-  <Tabs>
+    <Tabs isFitted>
     <TabList>
       <Tab>hayateについて</Tab>
-      <Tab>私の研究テーマ</Tab>
+      <Tab>研究について</Tab>
     </TabList>
-
+   
     <TabPanels>
       <TabPanel>
-        <h2><b>名前</b> : hayate</h2>
-        <h2><b>年齢</b> : 20</h2>
-        <h2><b>趣味</b> : ちいかわ</h2>
-        <h2><b>最近ハマっている事</b> : ガチャガチャ</h2>
+      <Text><b>名前</b> : hayate</Text>
+      <Text><b>年齢</b> : 20</Text>
+      <Text><b>趣味</b> : ちいかわ</Text>
+      <Text mb={5}><b>最近ハマっている事</b> : ガチャガチャ</Text>
+      <Button {...buttonProps} mb={4} p={4}>ガチャガチャ</Button>
+      <Text {...disclosureProps} mb={4}>獲得したグッズ</Text>
       </TabPanel>
-
-      <TabPanel>
-        <Heading as='h2' p={3} mb={5}>
-          <Center>
-            2段階ファインチューニングによる個性抽出手法の提案
-            </Center>
-            </Heading>
+   
+      <TabPanel>  
         <Accordion defaultIndex={[-1]} allowMultiple>
           <AccordionItem>
             <h2>
               <AccordionButton>
                 <Box as='span' flex='1' textAlign='left'>
-                  目的
+                  <b>研究テーマ</b>
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
-              </h2>
+            </h2>
               <AccordionPanel pb={4}>
-                少ないデータでも精度の高い個性の抽出を行えるようにしたい
-                </AccordionPanel>
-                </AccordionItem>
+              2段階ファインチューニングによる個性抽出手法について
+              </AccordionPanel>
+          </AccordionItem>
+         
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as='span' flex='1' textAlign='left'>
+                  <b>目的</b>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+              <AccordionPanel pb={4}>
+                より精度が高く、より人間らしい文章を生成する個性抽出モデルを作成する
+              </AccordionPanel>
+          </AccordionItem>
 
-                <AccordionItem>
-                  <h2>
-                    <AccordionButton>
-                      <Box as='span' flex='1' textAlign='left'>
-                        方法
-                        </Box>
-                        <AccordionIcon />
-                        </AccordionButton>
-                        </h2>
-                        <AccordionPanel pb={4}>
-                          <p>1. 青空文庫で公開されてい著作権が切れた全作家の作品を一つ選び、事前学習済みモデルでファインチューニングを行う</p>
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as='span' flex='1' textAlign='left'>
+                <b>方法</b>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+             </h2>
+            <AccordionPanel pb={4}>
+                          <Text>1. 青空文庫で公開されている個性を抽出したい作家と同時代に活躍した作家の作品を、事前学習済みモデルでファインチューニングを行う</Text>
+                          <Divider/>
                           <p>2. 個性を抽出したい作家の全作品（パブリックドメイン）を、事前学習済みモデルと1で作成したモデルでそれぞれファインチューニングを行う</p>
-                          <p>3. コサイン類似度やBLUEスコア等で性能評価を行う</p>
-                </AccordionPanel>
+                          <Divider/>
+                          <Text>3. それぞれのモデルの性能評価を行う</Text>
+                  </AccordionPanel>
                 </AccordionItem>
 
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
                       <Box as='span' flex='1' textAlign='left'>
-                        現在の進捗
+                      <b>現在の進捗</b>
                         </Box>
                         <AccordionIcon />
                         </AccordionButton>
                         </h2>
                         <AccordionPanel pb={4}>
                          ・データセット構築の途中
-                         <p>・夏休み終了時までには少なくとも一人データセットの構築を行い、性能評価まで行いたい</p>
+                         <p>・3年生終了時までには少なくとも一人、データセットの構築を終わらせて性能評価まで行いたい</p>
                           </AccordionPanel>
                           </AccordionItem>
 
@@ -112,22 +131,19 @@ export default function English() {
                   <h2>
                     <AccordionButton>
                       <Box as='span' flex='1' textAlign='left'>
-                        最終目標
+                      <b>最終目標</b>
                         </Box>
                         <AccordionIcon />
                         </AccordionButton>
                         </h2>
                         <AccordionPanel pb={4}>
-                         いい結果が出たらこのモデルをチャットbotにして、VR空間で使用できるようにしたい
+                         いい結果が出たらこのモデルをチャットbotにして、VR空間で使用できるアプリケーションのようにしたい
                           </AccordionPanel>
                           </AccordionItem>
-                </Accordion>
-                
-      </TabPanel>
-
-    </TabPanels>
+        </Accordion>
+        </TabPanel>
+      </TabPanels>
   </Tabs>
   </>
   );
 }
-
