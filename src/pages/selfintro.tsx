@@ -7,6 +7,7 @@ import {
   Divider,
   Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay,
   Heading,
+  Spacer,
   Tab, TabList, TabPanel, TabPanels, Tabs,
   Text,
   useDisclosure
@@ -53,10 +54,11 @@ export default function Japanese() {
    
     <TabPanels>
       <TabPanel>
-      <Text><b>名前</b> : hayate</Text>
-      <Text><b>年齢</b> : 20</Text>
-      <Text><b>趣味</b> : ちいかわ</Text>
-      <Text mb={5}><b>最近ハマっている事</b> : ガチャガチャ</Text>
+      <Text fontSize='2xl'><b>名前</b> : hayate</Text>
+      <Spacer />
+      <Text fontSize='2xl'><b>年齢</b> : 20</Text>
+      <Text fontSize='2xl'><b>趣味</b> : ちいかわ</Text>
+      <Text fontSize='2xl' mb={5}><b>最近ハマっている事</b> : ガチャガチャ</Text>
       <Button {...buttonProps} mb={4} p={4}>ガチャガチャ</Button>
       <Text {...disclosureProps} mb={4}>獲得したグッズ</Text>
       </TabPanel>

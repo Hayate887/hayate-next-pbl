@@ -15,7 +15,7 @@ import Link from "next/link";
 
 export default function English() {
   const {isOpen, onOpen, onClose}=useDisclosure()
-  
+
   return (<>
   <Box p={5}>
     <Button position="absolute" top='5' right="5" onClick={onOpen}>
@@ -28,17 +28,15 @@ export default function English() {
       <DrawerCloseButton/>
       <DrawerHeader>Menu</DrawerHeader>
       <DrawerBody>
-        <Link href='setting' target='_blank'>Back to Log in page</Link>
+        <Link href='setting_en' target='_blank'>Back to Log in page</Link>
       </DrawerBody>
       </DrawerContent>
     </Drawer>
   </Box>
-  
-  <Box p={2} mb={4}>
-    <Center>
-      <Heading as='h1'>Welcome to hayate&apos;s page!</Heading>
+
+  <Center>
+    <Heading as='h1' size='2xl' mb={10}>Welcome to hayate&apos;s page!</Heading>
     </Center>
-  </Box>
 
   <Tabs isFitted>
     <TabList>
@@ -126,7 +124,7 @@ export default function English() {
                         </AccordionButton>
                         </h2>
                         <AccordionPanel pb={4}>
-                         If I get good results, we want to turn this model into a chat bot, like an application that can be used in VR space.
+                         If I get good results, I want to turn this model into a chat bot, like an application that can be used in VR space.
                           </AccordionPanel>
                           </AccordionItem>
         </Accordion>
