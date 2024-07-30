@@ -43,7 +43,6 @@ export default function Home(){
       <Container>
         <Flex justify="center" align="center" height="100vh" width="full">
           <Box p={50} borderWidth="1px" borderRadius='lg'>
-
             <Menu>
               <MenuButton as={Button} rightIcon={<ChevronDownIcon />} position="absolute" top="5" right="5"> 
               言語
@@ -54,9 +53,8 @@ export default function Home(){
                 </MenuItem>
               </MenuList>
             </Menu>
-
             <Center>
-          <Heading as='h2' mb={10}>サインイン</Heading>
+          <Heading as='h2' mb={10}>ログイン</Heading>
           </Center>
           <Container>
         <FormControl isRequired>

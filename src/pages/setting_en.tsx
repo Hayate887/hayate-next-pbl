@@ -64,7 +64,7 @@ export default function Home(){
                   </Menu>
               
               <Center>
-                <Heading as='h2' mb={10}>Sign-in page</Heading>
+                <Heading as='h2' mb={10}>Log in</Heading>
                 </Center>
 
               <Container>

@@ -18,20 +18,19 @@ export default function English() {
   
   return (<>
   <Box p={5}>
-  <Button position="absolute" top='5' right="5" onClick={onOpen}>
+    <Button position="absolute" top='5' right="5" onClick={onOpen}>
       <HamburgerIcon />
-      </Button>
-      <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+    </Button>
+    
+    <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
       <DrawerOverlay />
       <DrawerContent>
       <DrawerCloseButton/>
-        <DrawerHeader>Menu</DrawerHeader>
-        <DrawerBody>
-      <Link href='setting' target='_blank'>
-         Back to Sign-in page
-     </Link>
-     </DrawerBody>
-     </DrawerContent>
+      <DrawerHeader>Menu</DrawerHeader>
+      <DrawerBody>
+        <Link href='setting' target='_blank'>Back to Sign-in page</Link>
+      </DrawerBody>
+      </DrawerContent>
     </Drawer>
   </Box>
   
@@ -54,7 +53,6 @@ export default function English() {
         <h2><b>Hobby</b> : Chii-kawa</h2>
         <h2><b>The thing what I'm into</b> : capsule toys</h2>
       </TabPanel>
-
       <TabPanel>
         <Accordion defaultIndex={[-1]} allowMultiple>
           <AccordionItem>
@@ -67,7 +65,7 @@ export default function English() {
               </AccordionButton>
             </h2>
               <AccordionPanel pb={4}>
-              2段階ファインチューニングによる個性抽出手法の提案
+              Individuality Extraction Method by Two-Step Fine Tuning
               </AccordionPanel>
           </AccordionItem>
 
@@ -81,7 +79,7 @@ export default function English() {
               </AccordionButton>
             </h2>
               <AccordionPanel pb={4}>
-                少ないデータでも精度の高い個性の抽出を行えるようにしたい
+                Create a personality extraction model that generates more accurate and more human-like sentences
               </AccordionPanel>
           </AccordionItem>
 
@@ -95,11 +93,11 @@ export default function English() {
               </AccordionButton>
              </h2>
             <AccordionPanel pb={4}>
-            <Text>1. 青空文庫で公開されている個性を抽出したい作家と同時代に活躍した作家の作品を、事前学習済みモデルでファインチューニングを行う</Text>
-                          <Divider/>
-                          <p>2. 個性を抽出したい作家の全作品（パブリックドメイン）を、事前学習済みモデルと1で作成したモデルでそれぞれファインチューニングを行う</p>
-                          <Divider/>
-                          <Text>3. それぞれのモデルの性能評価を行う</Text>
+              <Text>1. Fine-tune the works of authors who were active in the same period or earlier than the author whose individuality you wish to extract from the Aozora Bunko using a pre-trained morel</Text>
+              <Divider/>
+              <p>2. Fine-tune all works (public domain) of the artist whose personality you want to extract, using the pre-trained model and the model created in 1, respectively</p>
+              <Divider/>
+              <Text>3. Evaluate the performance of each model</Text>
             </AccordionPanel>
            </AccordionItem>
 
@@ -113,10 +111,10 @@ export default function English() {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-                         ・データセット構築の途中
-                         <p>・夏休み終了時までには少なくとも一人データセットの構築を行い、性能評価まで行いたい</p>
-                          </AccordionPanel>
-                          </AccordionItem>
+            ・Dataset construction in progress
+            <p>・I would like to have at least one person build a data set and evaluate its performance by the end of the third year</p>
+            </AccordionPanel>
+            </AccordionItem>
 
                 <AccordionItem>
                   <h2>
@@ -128,7 +126,7 @@ export default function English() {
                         </AccordionButton>
                         </h2>
                         <AccordionPanel pb={4}>
-                         いい結果が出たらこのモデルをチャットbotにして、VR空間で使用できるアプリケーションのようにしたい
+                         If I get good results, we want to turn this model into a chat bot, like an application that can be used in VR space.
                           </AccordionPanel>
                           </AccordionItem>
         </Accordion>

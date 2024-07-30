@@ -24,7 +24,6 @@ export default function Japanese() {
   return (
   <>
   <Box p={5}>
-    
       <Button position="absolute" top='5' right="5" onClick={onOpen}>
       <HamburgerIcon />
       </Button>
@@ -40,8 +39,6 @@ export default function Japanese() {
      </DrawerBody>
      </DrawerContent>
     </Drawer>
-       
-      
       </Box>
 
   
@@ -76,7 +73,7 @@ export default function Japanese() {
               </AccordionButton>
             </h2>
               <AccordionPanel pb={4}>
-              2段階ファインチューニングによる個性抽出手法について
+              2段階ファインチューニングによる個性抽出手法
               </AccordionPanel>
           </AccordionItem>
          
@@ -104,7 +101,7 @@ export default function Japanese() {
               </AccordionButton>
              </h2>
             <AccordionPanel pb={4}>
-                          <Text>1. 青空文庫で公開されている個性を抽出したい作家と同時代に活躍した作家の作品を、事前学習済みモデルでファインチューニングを行う</Text>
+                          <Text>1. 青空文庫で公開されている個性を抽出したい作家と同時代かそれ以前に活躍した作家の作品を、事前学習済みモデルでファインチューニングを行う</Text>
                           <Divider/>
                           <p>2. 個性を抽出したい作家の全作品（パブリックドメイン）を、事前学習済みモデルと1で作成したモデルでそれぞれファインチューニングを行う</p>
                           <Divider/>
