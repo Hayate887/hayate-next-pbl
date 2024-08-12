@@ -22,6 +22,7 @@ import Link from "next/link";
 import { useState } from 'react';
 
 
+
 export default function Japanese() {
 
   const {isOpen, onOpen, onClose}=useDisclosure();
